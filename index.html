@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заявка на вступление в The Radical-Liberal Party</title>
+    <link rel="icon" type="image/x-icon" href="statue-of-liberty.ico">
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <style href ="style.css"></style>
     
@@ -21,6 +22,11 @@
             <input type="text" id="field3" placeholder="Ксерокопия Паспорта" required>
             <input type="text" id="field4" placeholder="Электронная почта (Discord)" required>
             <input type="text" id="field5" placeholder="Номер телефона" required>
+            <select type="value" id="field6">
+                <option selected hidden>Сервер</option>
+                <option>Los-Angeles</option>
+                <option>Houston</option>
+            </select>
             <button type="submit">Отправить</button>
         </form>
     </div>
@@ -34,7 +40,7 @@
             const field3 = document.getElementById('field3').value;
             const field4 = document.getElementById('field4').value;
             const field5 = document.getElementById('field5').value;
-
+            const field6 = document.getElementById('field6').value;
             const webhookURL = 'https://discord.com/api/webhooks/1301272975768682546/3JkfZ_ST07tH3R0F7ymGQHEQRTjActULJ8sggPeLMTbmhab6BS-tB865ZBv0AbAHWkD6'; // Замените на ваш URL вебхука
 
             // Формируем поля для отправки
@@ -43,7 +49,8 @@
                 { name: "Номер Паспорта", value: field2, inline: false },
                 { name: "Ксерокопия Паспорта", value: field3, inline: false },
                 { name: "Электронная почта (Discord)", value: field4, inline: false },
-                { name: "Номер телефона", value: field5, inline: false }
+                { name: "Номер телефона", value: field5, inline: false },
+                { name: "Сервер", value: field6, inline: false }
             ];
 
             // Получаем текущее время
